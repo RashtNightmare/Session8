@@ -25,7 +25,22 @@ Route::get('/menu', function () {
 Route::get('/login', function () {
     return view('auth.login');
 });
-Route::get('/auth-login',[AuthController::class,'doLogin']);
+
+Route::get('/user-auth',function () {
+    return view('login_user');
+});
+Route::get('/role-auth',function () {
+    return view('login_role');
+});
+
+
+Route::get('/user-login',[AuthController::class,'LoginUser']);
+Route::get('/role-login',[AuthController::class,'LoginRole']);
+Route::get('/user-destroy',[AuthController::class,'DestroyRole']);
+Route::get('/role-destroy',[AuthController::class,'DestroyUser']);
+
+
+// Route::get('/auth-login',[AuthController::class,'doLogin']);
 Route::get('/sign-in', function () {return view('sign_in');});
 // Route::get('/role-add',[RoleController::class,'add']);
  Route::get('/user/create',[UserController::class,'create']);
