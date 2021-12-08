@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,18 +29,18 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/user-auth',function () {
+Route::get('/user/auth',function () {
     return view('login_user');
 });
-Route::get('/role-auth',function () {
+Route::get('/role/auth',function () {
     return view('login_role');
 });
 
 
-Route::get('/user-login',[AuthController::class,'LoginUser']);
-Route::get('/role-login',[AuthController::class,'LoginRole']);
-Route::get('/user-destroy',[AuthController::class,'DestroyRole']);
-Route::get('/role-destroy',[AuthController::class,'DestroyUser']);
+Route::get('/user/login',[AuthController::class,'LoginUser']);
+Route::get('/role/login',[AuthController::class,'LoginRole']);
+Route::get('/user/destroy',[AuthController::class,'DestroyRole']);
+Route::get('/role/destroy',[AuthController::class,'DestroyUser']);
 
 
 // Route::get('/auth-login',[AuthController::class,'doLogin']);
@@ -53,5 +56,5 @@ Route::get('/welcome_new',function(){
 Route::resource('/role',RoleController::class);
 Route::resource('/user',UserController::class);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

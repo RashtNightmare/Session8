@@ -11,7 +11,7 @@
   </head>
 
 <div class="w-full max-w-xs">
-<form method ="post" action="\role-login" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+<form method ="post" action="\user\login" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
    {{ csrf_field() }} 
    <div class="mb-4">
      <span style="background-color:blue;color:white;" class="text-gray-700">ROLES</span>
